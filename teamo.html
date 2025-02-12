@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TE AMOOOOO</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: red;
+            margin-top: 20%;
+            animation: brillo 1.5s infinite alternate, cambiarColor 3s infinite;
+            text-shadow: 0px 0px 20px white, 0px 0px 30px red;
+        }
+
+        /* Efecto de brillo */
+        @keyframes brillo {
+            from {
+                text-shadow: 0px 0px 10px white, 0px 0px 20px red;
+            }
+            to {
+                text-shadow: 0px 0px 20px white, 0px 0px 40px red;
+            }
+        }
+
+        /* Cambio de color en el texto */
+        @keyframes cambiarColor {
+            0% { color: red; }
+            50% { color: white; }
+            100% { color: red; }
+        }
+
+        /* Corazones flotantes */
+        .corazon {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: flotar 5s linear infinite;
+        }
+
+        @keyframes flotar {
+            from {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 YO SABÍA QUE IBAS A DECIR QUE SÍIII, jijiji. Gracias por tanto mi amor y gracias por ser mi San Valentín, 
+        te amo infinitamente mi amor. No hay día en el que no agradezca haberte conocido y poder compartir mi vida contigo. 
+        ¡TE AMOOOOO! 💖</h1>
+
+    <script>
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.innerHTML = "❤️";
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = (Math.random() * 3 + 2) + "s"; 
+            document.body.appendChild(corazon);
+
+            setTimeout(() => {
+                corazon.remove();
+            }, 5000);
+        }
+
+        setInterval(crearCorazon, 300);
+    </script>
+</body>
+</html>
